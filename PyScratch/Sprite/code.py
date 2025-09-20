@@ -2,7 +2,7 @@ import pygame
 
 class Code:
     def __init__(self, Sprite):
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.display.set_mode((800, 600), pygame.RESIZABLE | pygame.SCALED)
         self.running = True
         self.input_text = ""
         self.mouse_down = [False, (0, 0)]
