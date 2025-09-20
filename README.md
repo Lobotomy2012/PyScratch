@@ -1,5 +1,5 @@
 # PyScratch
-Scratch but in python?
+Scratch but python?
 
 PyScratch bridges the gap between Scratch and Python, maybe. This module implements all code blocks in scratch, but not includes extentions.
 
