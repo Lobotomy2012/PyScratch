@@ -6,4 +6,6 @@ def init():
     import pygame
 
     pygame.init()
+
     print("==== Welcome to PyScratch ====")
+    print("https://github.com/Lobotomy2012/PyScratch/tree/main")
