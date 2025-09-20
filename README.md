@@ -6,7 +6,7 @@ PyScratch bridges the gap between Scratch and Python, maybe. This module impleme
 # Uses
 install PyScratch
 ```cmd
-pip install pyscratch-lobotmy2012
+pip install pyscratch_lobotomy2012
 ```
 
 # Demo
