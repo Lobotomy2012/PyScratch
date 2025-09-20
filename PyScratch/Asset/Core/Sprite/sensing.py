@@ -11,7 +11,7 @@ class Sensing(Control):
         self.input_text = ""
         self.asking = True
 
-        while self.asking and self.running:
+        while self.asking:
             if self.input_text == "":
                 pass
             elif self.input_text[-1] == "\n":

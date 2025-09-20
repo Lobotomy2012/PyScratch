@@ -13,12 +13,12 @@ class Control(Events):
     
     def wait_until(self, arg: bool):
         """Remember to add \"yield from\" like \"yield from self.core.wait_until(True)\""""
-        while self.running and arg:
+        while True and arg:
             yield
         
     def call_def(self, one):
         """To call a \"def\", it's just like \"my block\""""
-        while self.running:
+        while True:
             try:
                 next(one)
             except StopIteration:
@@ -48,4 +48,4 @@ class Control(Events):
     
     def stop_all(self):
         """If u want t stop only 1 script, use \"return\""""
-        self.all_running = False
+        self.running = False

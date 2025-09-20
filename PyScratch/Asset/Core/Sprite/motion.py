@@ -41,9 +41,6 @@ class Motion(Core):
         step_x = (x - self.pos[0]) / steps
         step_y = (y - self.pos[1]) / steps
         for _ in range(steps):
-            if self.running == False:
-                break
-                
             self.pos[0] += step_x
             self.pos[1] += step_y
             self.object.update(self.pos)

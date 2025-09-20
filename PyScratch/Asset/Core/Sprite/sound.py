@@ -11,7 +11,7 @@ class Sound(Looks):
         channel = sound.play()
         
         if until_done:
-            while channel.get_busy() and self.running:
+            while channel.get_busy():
                 channel.set_volume(self.pad_left / 100, self.pad_right / 100)
                 yield
     

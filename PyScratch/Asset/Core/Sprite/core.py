@@ -9,7 +9,6 @@ class Core:
         self.screen = screen
         self.pos = list(pos)
         self.running = True
-        self.all_running = True
 
         self.object_text = Text(font, pos)
         self.inputing_text = Text(font, (10, screen.get_height()+70-20))
@@ -18,6 +17,7 @@ class Core:
         self.clones = []
         self.input_key = ""
         self.click_sprite = False
+        self.broadcast_list = []
         self.mouse_down = False
         self.draggable = False
         self.dragging = False

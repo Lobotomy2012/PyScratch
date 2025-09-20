@@ -36,7 +36,9 @@ class Code:
     def update(self):
         if self.running:
             self.sprites.empty()
+            counter = []
             for i in range(len(self.sprite)):
+                counter.insert(i, 0)
                 self.sprites.add(self.sprite[i].core.sprites)
 
                 try:
@@ -49,6 +51,10 @@ class Code:
                 self.sprite[i].core.input_text = self.input_text
                 self.sprite[i].core.input_key = pygame.key.get_pressed()
                 self.sprite[i].core.update_clones()
+                if counter[i] % 2 == 0:
+                    self.sprite[i].core.update_broadcast_list(self.sprite[0 if i-1 < 0 else i-1].core.broadcast_list)
+                else:
+                    self.sprite[i].core.clear_broadcast_list()
 
                 if self.mouse_down[0]:
                     if not self.sprite[i].core.dragging:
@@ -69,13 +75,14 @@ class Code:
                 if not self.sprite[i].core.asking and self.input_text != "":
                     self.input_text = ""
 
-                if not self.sprite[i].core.all_running:
+                if not self.sprite[i].core.running:
                     self.stop()
                     break
 
             if self.running == False:
                 self.stop()
 
+            counter[i] += 1
             self.sprites.draw(self.screen)
     
     def stop(self):
