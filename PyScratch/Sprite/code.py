@@ -30,18 +30,19 @@ class Code:
         self.sprites.empty()
         self.running = True
 
-        self.more_thread = []
         for i in range(len(self.sprite)):
             self.start(i)
 
     def update(self):
         if self.running:
-            finished = []
+            self.sprites.empty()
             for i in range(len(self.sprite)):
+                self.sprites.add(self.sprite[i].core.sprites)
+
                 try:
                     next(self.tasks[i])
                 except StopIteration:
-                    finished.append(self.tasks[i])
+                    pass
                 except IndexError:
                     self.stop()
 
@@ -71,8 +72,6 @@ class Code:
                 if not self.sprite[i].core.all_running:
                     self.stop()
                     break
-            for task in finished:
-                self.tasks.remove(task)
 
             if self.running == False:
                 self.stop()
