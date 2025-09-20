@@ -15,6 +15,16 @@ class Control(Events):
         """Remember to add \"yield from\" like \"yield from self.core.wait_until(True)\""""
         while self.running and arg:
             yield
+        
+    def call_def(self, one):
+        """To call a \"def\", it's just like \"my block\""""
+        while self.running:
+            try:
+                next(one)
+            except StopIteration:
+                break
+
+            yield
 
     def create_clone(self, One):
         """This is not like scratch, remember to add a variable like this:\n
