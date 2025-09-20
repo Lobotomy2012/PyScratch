@@ -26,7 +26,7 @@ class Sprite1(pyscratch.Sprite):
         costume = ["costume1.png", "costume2.png"]
         i = 0
 
-        while self.core.running:
+        while True:
             self.core.change_costume(costume[int(i%2)])
             self.core.move(5)
             self.core.bounce_if_on_edge()
