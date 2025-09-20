@@ -7,5 +7,6 @@ def init():
 
     pygame.init()
 
-    print("==== Welcome to PyScratch ====")
-    print("https://github.com/Lobotomy2012/PyScratch/tree/main")
+    print("\033[96m==== Welcome to PyScratch ====")
+    print("\033[94mhttps://github.com/Lobotomy2012/PyScratch/tree/main\033[0m")
+
