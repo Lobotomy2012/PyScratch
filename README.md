@@ -11,7 +11,7 @@ pip install pyscratch_lobotomy2012
 
 # Demo
 ```python
-from Lib.PyScratch import pyscratch
+from pyscratch import pyscratch
 
 pyscratch.init()
 
