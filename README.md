@@ -3,6 +3,12 @@ Scratch but python?
 
 PyScratch bridges the gap between Scratch and Python, maybe. This module implements all code blocks in scratch, but not includes extentions.
 
+# Uses
+install PyScratch
+```cmd
+pip install pyscratch-lobotmy2012
+```
+
 # Demo
 ```python
 from Lib.PyScratch import pyscratch
