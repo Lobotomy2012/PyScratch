@@ -10,18 +10,16 @@ class Control(Events):
         start = pygame.time.get_ticks()
         while pygame.time.get_ticks() - start < sec * 1000 and self.running:
             yield
-    
-    def wait_until(self, arg: bool):
-        """Remember to add \"yield from\" like \"yield from self.core.wait_until(True)\""""
-        while True and arg:
-            yield
         
     def call_def(self, one):
-        """To call a \"def\", it's just like \"my block\""""
+        """To call a \"def\" but with yield"""
+        """And don't forget to add \"yield from\" like \"yield from self.core.call_def(def)\""""
         while True:
             try:
                 next(one)
             except StopIteration:
+                break
+            except TypeError:
                 break
 
             yield

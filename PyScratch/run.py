@@ -43,8 +43,8 @@ def run(code):
 
         if code.running:
             code.screen.fill((255, 255, 255))
-            button.draw(code.screen)
             code.update()
+            button.draw(code.screen)
 
         pygame.display.set_caption("PyScratch")
 

@@ -18,6 +18,7 @@ class Core:
         self.input_key = ""
         self.click_sprite = False
         self.broadcast_list = []
+        self.all_broadcast_list = []
         self.mouse_down = False
         self.draggable = False
         self.dragging = False

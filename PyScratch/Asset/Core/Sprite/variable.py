@@ -24,7 +24,7 @@ class Variable(Sensing):
         
         vaule = {
             "name": str(name),
-            "data": str(vaule)
+            "data": vaule
         }
         data.append(vaule)
         
@@ -37,3 +37,4 @@ class Variable(Sensing):
             for i in range(len(data)):
                 if data[i]["name"] == name:
                     return data[i]["data"]
+                yield

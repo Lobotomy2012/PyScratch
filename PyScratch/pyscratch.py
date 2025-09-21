@@ -7,6 +7,7 @@ def init():
 
     pygame.init()
 
-    print("\033[96m==== Welcome to PyScratch ====")
-    print("\033[94mPyScratch 0.1.7]")
-    print("\033[92mhttps://github.com/Lobotomy2012/PyScratch\033[0m")
+    print()
+    print("\033[96mHello from PyScratch")
+    print("\033[94mPyScratch 1.1.0")
+    print("\033[90mGithub: https://github.com/Lobotomy2012/PyScratch\033[0m")
