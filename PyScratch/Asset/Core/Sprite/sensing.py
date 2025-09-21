@@ -36,12 +36,8 @@ class Sensing(Control):
                 if self.object.rect.collidepoint(pygame.mouse.get_pos()):
                     return True
         else:
-            try:
-                if self.object.rect.collidepoint((arg.core.object.rect.x, arg.core.object.rect.y)):
-                    return True
-            except:
-                print("How do I check that")
-                return False
+            if self.object.rect.collidepoint((arg.core.object.rect.x, arg.core.object.rect.y)):
+                return True
         
         return False
     

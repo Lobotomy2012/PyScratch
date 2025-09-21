@@ -56,17 +56,15 @@ class Code:
                 self.sprite[i].core.all_broadcast_list = all_broadcast
                 self.sprite[i].core.update_clones()
 
+                self.sprite[i].core.mouse_down = False
+                self.sprite[i].core.click_sprite = False
+                self.sprite[i].core.dragging = False
                 if self.mouse_down[0]:
                     if not self.sprite[i].core.dragging:
                         if self.sprite[i].core.object.rect.collidepoint(self.mouse_down[1]):
                             self.sprite[i].core.click_sprite = True
                             if self.sprite[i].core.draggable:
                                 self.sprite[i].core.dragging = True
-                        else:
-                            self.sprite[i].core.click_sprite = False
-                else:
-                    self.sprite[i].core.mouse_down = False
-                    self.sprite[i].core.dragging = False
 
                 if self.sprite[i].core.dragging:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
