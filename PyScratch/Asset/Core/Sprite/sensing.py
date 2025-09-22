@@ -27,18 +27,17 @@ class Sensing(Control):
     def touching(self, arg):
         if type(arg) == str:
             if arg == "edge":
-                if self.object.rect.left < 0 or \
-                    self.object.rect.right > self.screen.get_width() or \
-                        self.object.rect.top < 0 or \
-                            self.object.rect.bottom > self.screen.get_height():
-                    return True
+                return (
+                self.object.rect.left < 0
+                or self.object.rect.right > self.screen.get_width()
+                or self.object.rect.top < 0
+                or self.object.rect.bottom > self.screen.get_height()
+            )
             elif arg == "mouse":
-                if self.object.rect.collidepoint(pygame.mouse.get_pos()):
-                    return True
-        else:
-            if self.object.rect.collidepoint((arg.core.object.rect.x, arg.core.object.rect.y)):
-                return True
-        
+                return self.object.rect.collidepoint(pygame.mouse.get_pos())
+        elif hasattr(arg, "core"):
+            offset = (arg.core.object.rect.x - self.object.rect.x, arg.core.object.rect.y - self.object.rect.y)
+            return self.object.mask.overlap(arg.core.object.mask, offset)
         return False
     
     def mouse_is_down(self):

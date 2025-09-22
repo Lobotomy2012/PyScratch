@@ -10,19 +10,6 @@ class Control(Events):
         start = pygame.time.get_ticks()
         while pygame.time.get_ticks() - start < sec * 1000 and self.running:
             yield
-        
-    def call_def(self, one):
-        """To call a \"def\" but with yield"""
-        """And don't forget to add \"yield from\" like \"yield from self.core.call_def(def)\""""
-        while True:
-            try:
-                next(one)
-            except StopIteration:
-                break
-            except TypeError:
-                break
-
-            yield
 
     def create_clone(self, One):
         """This is not like scratch, remember to add a variable like this:\n

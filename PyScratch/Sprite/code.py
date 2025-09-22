@@ -15,12 +15,12 @@ class Code:
             self.sprite.append(Sprite[i](self.screen))
 
             self.start(i)
+        
+        for i in range(len(self.sprite)):
+            self.sprite[i].all_sprite = self.sprite
     
     def start(self, i):
-        try:
-            self.tasks[i] = self.sprite[i].run()
-        except IndexError:
-            self.tasks.append(self.sprite[i].run())
+        self.tasks.insert(i, self.sprite[i].run())
 
         self.sprites.add(self.sprite[i].core.sprites)
 
@@ -58,17 +58,18 @@ class Code:
 
                 self.sprite[i].core.mouse_down = False
                 self.sprite[i].core.click_sprite = False
-                self.sprite[i].core.dragging = False
                 if self.mouse_down[0]:
                     if not self.sprite[i].core.dragging:
                         if self.sprite[i].core.object.rect.collidepoint(self.mouse_down[1]):
                             self.sprite[i].core.click_sprite = True
                             if self.sprite[i].core.draggable:
                                 self.sprite[i].core.dragging = True
+                else:
+                    self.sprite[i].core.dragging = False
 
                 if self.sprite[i].core.dragging:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    self.sprite[i].core.go_to(mouse_x, mouse_y)
+                    mouse = pygame.mouse.get_pos()
+                    self.sprite[i].core.go_to(mouse[0], mouse[1])
 
                 if not self.sprite[i].core.asking and self.input_text != "":
                     self.input_text = ""

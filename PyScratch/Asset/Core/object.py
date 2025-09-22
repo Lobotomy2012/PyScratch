@@ -7,11 +7,12 @@ class Object(pygame.sprite.Sprite):
         self.original_image = pygame.image.load(image_path).convert_alpha()
         self.image = self.original_image
         self.rect = self.image.get_rect(center=self.pos)
+        self.mask = pygame.mask.from_surface(self.image)
         self.size = 1
         self.angle = 90
 
     def update(self, pos = None, angle = None, image_path=None, size=None):
-        if pos:
+        if pos is not None:
             self.pos = pos
         if angle is not None:
             self.angle = angle
@@ -22,3 +23,4 @@ class Object(pygame.sprite.Sprite):
             self.size = size
         self.image = pygame.transform.rotozoom(self.original_image, self.angle, self.size)
         self.rect = self.image.get_rect(center=self.pos)
+        self.mask = pygame.mask.from_surface(self.image)
