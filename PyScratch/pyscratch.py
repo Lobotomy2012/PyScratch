@@ -9,5 +9,5 @@ def init():
 
     print()
     print("\033[96mHello from PyScratch")
-    print("\033[94mPyScratch 1.3.0")
+    print("\033[94mPyScratch 1.3.1")
     print("\033[90mGithub: https://github.com/Lobotomy2012/PyScratch\033[0m")

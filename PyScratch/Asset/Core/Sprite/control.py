@@ -4,6 +4,12 @@ import pygame
 class Control(Events):
     def __init__(self, screen, pos, image_path, angle):
         super().__init__(screen, pos,  image_path, angle)
+    
+    def call_def(self, generator):
+        try:
+            next(generator)
+        except StopIteration:
+            pass
 
     def wait(self, sec):
         """Remember to add \"yield from\" like \"yield from self.core.wait(1)\""""

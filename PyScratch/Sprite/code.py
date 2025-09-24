@@ -46,6 +46,8 @@ class Code:
                     pass
                 except IndexError:
                     self.stop()
+                except TypeError:
+                    pass
 
                 self.sprite[i].core.input_text = self.input_text
                 self.sprite[i].core.input_key = pygame.key.get_pressed()
