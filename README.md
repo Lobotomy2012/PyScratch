@@ -22,7 +22,6 @@ class Sprite1(pyscratch.Sprite):
     def run(self):
         self.core.go_to(100, 100)
         self.core.say("Hello, PyScratch!")
-        self.core.say(str(self.core.current_date("year")))
         costume = ["costume1.png", "costume2.png"]
         i = 0
 
